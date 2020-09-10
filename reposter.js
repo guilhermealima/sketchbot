@@ -3,15 +3,31 @@
 console.log("LOADING LIBRARIES...");
 
 const fs = require("fs");
-const Discord = require("discord.js");
+
+const Discord = require('discord.js');
 const client = new Discord.Client();
-
-client.login("NzUwMDA2NTM1NjY4NjI5NTI0.X00QBA.YtDPMvR08h2x8LbpwBE-eCUNXqo").catch(console.error);
-
-client.on("ready", function() {
-	client.user.setActivity(client.guilds.size + " server" + (client.guilds.size === 1 ? "" : "s"), { type: "WATCHING" }).catch(console.error);
-	console.log("READY FOR ACTION!");
+client.on('ready', () => {
+    console.log('I am ready!');
 });
+
+client.on('message', message => {
+    if (message.content === 'ping') {
+       message.reply('pong');
+       }
+});
+
+// THIS  MUST  BE  THIS  WAY
+client.login(process.env.BOT_TOKEN);//where BOT_TOKEN is the token of our bot
+
+//const Discord = require("discord.js");
+//const client = new Discord.Client();
+
+//client.login("NzUwMDA2NTM1NjY4NjI5NTI0.X00QBA.YtDPMvR08h2x8LbpwBE-eCUNXqo").catch(console.error);
+
+//client.on("ready", function() {
+//	client.user.setActivity(client.guilds.size + " server" + (client.guilds.size === 1 ? "" : "s"), { type: "WATCHING" }).catch(console.error);
+//	console.log("READY FOR ACTION!");
+//});
 
 let config = {
 	replacements: {},
