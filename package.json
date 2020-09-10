@@ -2,14 +2,14 @@
   "name": "Discord-Reposter",
   "version": "1.0.0",
   "description": "Bot for reposting Discord messages.",
-  "main": "reposter.js",
+  "main": "bot.js",
   "engines": {
     "node": "10.x",
     "npm": "*"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node reposter.js"
+    "start": "node bot.js"
   },
   "keywords": [
     "discord",
